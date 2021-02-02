@@ -5,6 +5,8 @@ window.addEventListener('DOMContentLoaded', function () {
    let btnSubmit = document.getElementById('btnSubmit');
    let inputText = document.getElementById('inputText');
 
+   let count = 0;
+
    document.body.appendChild(btn);
 
    btn.addEventListener('click', function () {
@@ -45,13 +47,12 @@ window.addEventListener('DOMContentLoaded', function () {
        let friendList = document.getElementById('friendList');
        let friendNames = ['Holden', 'Naomi', 'Amos', 'Alex', 'Bobbie', 'Chrisjen', 'Drummer', 'Peaches', 'Miller', 'Cotyar'];
 
-       for (i = 0; i < friendNames.length; i++) {
-           let friend = document.createElement('li');
-           let name = document.createTextNode(friendNames[i]);
-           friend.appendChild(name);
-           friendList.appendChild(friend);
+       let friend = document.createElement('li');
+       friend.append(friendNames[count]);
+       friendList.appendChild(friend);
+       count++;
 
-       };
+       
    });
 
 });

@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    let count = 0
+
     $('body').prepend('<button class="firstBtn" type="button">Click Me</button>');
 
     $('.firstBtn').click(function () {
@@ -34,8 +36,12 @@ $(document).ready(function () {
     $('#friendBtn').click(function () {
         let friendNames = ['Holden', 'Naomi', 'Amos', 'Alex', 'Bobbie', 'Chrisjen', 'Drummer', 'Peaches', 'Miller', 'Cotyar'];
 
-        for (i = 0; i < friendNames.length; i++) {
-            $(friendList).append('<li>' + friendNames[i] + '</li>')
+        $('#friendList').append('<li>' + friendNames[count] + '</li>');
+        count++;
+        if (count == friendNames.length) {
+            $('#friendBtn').attr('disabled', true);
+        } else {
+            $('#friendBtn').attr('disabled', false);
         };
     });
 
