@@ -52,7 +52,10 @@ window.addEventListener('DOMContentLoaded', function () {
        friendList.appendChild(friend);
        count++;
 
-       
+       if (count == friendNames.length) {
+           friendBtn.disabled = true;
+       } else {
+           friendBtn.disabled = false;
+       };
    });
-
 });
